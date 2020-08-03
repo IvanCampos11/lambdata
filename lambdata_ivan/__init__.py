@@ -18,4 +18,5 @@ def listToColumn(df, lists):
     df.copy
     newSeries =  pd.Series(list)
     df['New Column'] = newSeries
+    return df
 
