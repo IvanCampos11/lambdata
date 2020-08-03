@@ -16,7 +16,7 @@ def nullReport(df):
 def listToColumn(df, lists):
     lists.copy
     df.copy
-    newSeries =  pd.Series(list)
+    newSeries =  pd.Series(lists)
     df['New Column'] = newSeries
     return df
 
