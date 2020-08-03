@@ -9,15 +9,15 @@ REQUIRED = [
 with open("README.md", "r") as file:
     LONG_DESCRIPTION = file.read()
 setuptools.setup(
-    name="lambdata-soycode",
+    name="lambdata-ivan",
     version="0.0.1",
-    author="soycode",
+    author="Ivan Campos",
     description="A collection of Data Science helper functions",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    url="https://github.com/soycode/lambdata",
+    url="https://github.com/IvanCampos11/lambdata",
     packages=setuptools.find_packages(),
-    python_requires=">=3.6",
+    python_requires=">=3.8",
     install_requires=REQUIRED,
     classifiers=[
         "Programming Language :: Python :: 3",
