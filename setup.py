@@ -17,7 +17,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/IvanCampos11/lambdata",
     packages=setuptools.find_packages(),
-    python_requires=">=3.8",
+    python_requires=">=3.6",
     install_requires=REQUIRED,
     classifiers=[
         "Programming Language :: Python :: 3",
