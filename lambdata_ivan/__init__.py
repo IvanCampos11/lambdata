@@ -31,7 +31,8 @@ class DFMod:
         newSeries =  pd.Series(lists)
         self.dataFrame[name] = newSeries
         return self.dataFrame
-    
+        
+#This finds commonly used placeholders for NaN's and raplces them to a real numpy NaN then it drops all rows containing them, cleaning the data
     def nullClean(self):
          self.dataFrame = self.dataFrame.replace('?', np.nan).replace('nan',np.nan).replace('Nan',np.nan).replace('NaN',np.nan).replace(' ?',np.nan).replace('N/A',np.nan).replace('n/a',np.nan)
          nullValue = self.dataFrame.isnull().sum().sum()
