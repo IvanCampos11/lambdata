@@ -1,3 +1,4 @@
+
 """
 lambdata - a collection of Data Science helper functions
 """
@@ -10,8 +11,12 @@ from lambdata_ivan.dataframe_helper import report_missing_values
 def nullReport(df):
     df.copy
     nullFound = df.isnull().sum().sum()
-    answer = print('There is', nullFound,'NaN values in your DataFrame.')
-    return answer
+    if (nullFound == 1):
+        answer1 = print('There is only', nullFound, 'NaN value in your DataFrame!')
+        return answer1
+    else: 
+        answer2 = print('There are', nullFound, 'NaN values in your DataFrame.')
+        return answer2
 
 def listToColumn(df, lists):
     lists.copy
