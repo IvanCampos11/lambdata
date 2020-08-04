@@ -14,14 +14,17 @@ def nullReport(df):
     if (nullFound == 1):
         answer1 = print('There is only', nullFound, 'NaN value in your DataFrame!')
         return answer1
-    else: 
+    elif (nullFound > 1): 
         answer2 = print('There are', nullFound, 'NaN values in your DataFrame.')
         return answer2
+    else:
+        print('There are no NaN values in your DataFrame!')
 
-def listToColumn(df, lists):
+
+def listToColumn(df, lists,name):
     lists.copy
     df.copy
     newSeries =  pd.Series(lists)
-    df['New Column'] = newSeries
+    df[name] = newSeries
     return df
 
