@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 from lambdata_ivan.dataframe_helper import report_missing_values
 
-class DFMod():
+class DFMod:
     def __init__(self,df):
         self.dataFrame = df
 
