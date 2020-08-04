@@ -33,4 +33,8 @@ class DFMod:
         return self.dataFrame
     
     def nullClean(self):
-
+         self.dataFrame = self.dataFrame.replace('?', np.nan).replace('nan',np.nan).replace('Nan',np.nan).replace('NaN',np.nan).replace(' ?',np.nan).replace('N/A',np.nan).replace('n/a',np.nan)
+        nullValue = self.dataFrame.isnull().sum().sum()
+        self.dataFrame.dropna(inplace=True)
+        print('There were', nullValue, "NaN's detected and removed.")
+        return self.dataFrame
