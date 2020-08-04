@@ -34,8 +34,11 @@ class DFMod:
         
 #This finds commonly used placeholders for NaN's and raplces them to a real numpy NaN then it drops all rows containing them, cleaning the data
     def nullClean(self):
-         self.dataFrame = self.dataFrame.replace('?', np.nan).replace('nan',np.nan).replace('Nan',np.nan).replace('NaN',np.nan).replace(' ?',np.nan).replace('N/A',np.nan).replace('n/a',np.nan)
-         nullValue = self.dataFrame.isnull().sum().sum()
-         self.dataFrame.dropna(inplace=True)
-         print('There were', nullValue, "NaN's detected and removed.")
-         return self.dataFrame
+        self.dataFrame = self.dataFrame.replace({
+            '?': np.nan,'nan': np.nan,'Nan':np.nan,'n/a':np.nan,
+            'NaN':np.nan,' ?':np.nan,'N/A':np.nan,'na':np.nan,'NAN':np.nan
+        })
+        nullValue = self.dataFrame.isnull().sum().sum()
+        self.dataFrame.dropna(inplace=True)
+        print('There were', nullValue, "NaN's detected and removed.")
+        return self.dataFrame
