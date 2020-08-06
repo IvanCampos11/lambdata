@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 from lambdata_ivan.dataframe_helper import report_missing_values
 
-#Stands for DataFrameModification, This class gives you info about the df 
+#Stands for DataFrameModification, This class gives you info about the df
 # and cleans it from NaN's if you want.
 class DFMod:
     def __init__(self,df):
@@ -19,7 +19,7 @@ class DFMod:
         if (nullFound == 1):
             answer1 = print('There is only', nullFound, 'NaN value in your DataFrame!')
             return answer1
-        elif (nullFound > 1): 
+        elif (nullFound > 1):
             answer2 = print('There are', nullFound, 'NaN values in your DataFrame.')
             return answer2
         else:
@@ -27,11 +27,10 @@ class DFMod:
 
 #Give this a list and a name and it'll turn it into a series and add it as a new column.
     def listToColumn(self, lists, name):
-        lists.copy
         newSeries =  pd.Series(lists)
         self.dataFrame[name] = newSeries
         return self.dataFrame
-        
+
 #This finds commonly used placeholders for NaN's and raplces them to a real numpy NaN then it drops all rows containing them, cleaning the data
     def nullClean(self):
         self.dataFrame = self.dataFrame.replace({
