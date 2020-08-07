@@ -31,7 +31,7 @@ class DFMod:
         self.dataFrame[name] = newSeries
         return self.dataFrame
 
-#This finds commonly used placeholders for NaN's and raplces them to a real numpy NaN then it drops all rows containing them, cleaning the data
+#This finds commonly used placeholders for NaN's and replces them to a real numpy NaN then it drops all rows containing them, cleaning the data
     def nullClean(self):
         self.dataFrame = self.dataFrame.replace({
             '?': np.nan,'nan': np.nan,'Nan':np.nan,'n/a':np.nan,
